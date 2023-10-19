@@ -1,10 +1,14 @@
-extern crate docx;
+use structopt::StructOpt;
 
-use docx::document::Paragraph;
-use docx::DocxFile;
+#[derive(StructOpt, Debug)]
+struct Args {
+    name: String,
+    count: u8,
+}
 
 fn main() {
-    let input_file: DocxFile = DocxFile::from_file("input.docx").unwrap();
-    let input_data = input_file.parse().unwrap();
-    println!("{}", input_data);
+    let args = Args::from_args();
+    for _ in 0..args.count {
+        println!("Hello {}!", args.name)
+    }
 }
