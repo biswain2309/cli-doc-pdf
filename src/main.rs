@@ -7,8 +7,6 @@ use structopt::StructOpt;
 #[derive(StructOpt, Debug)]
 struct Args {
     file_path: String,
-    // str_to_replace: String,
-    // replaced_str: String,
 }
 
 fn main() {
